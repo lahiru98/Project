@@ -223,6 +223,8 @@
     <Content Include="Views\doctors\Main.cshtml" />
     <Content Include="Views\patients\Login.cshtml" />
     <Content Include="Views\patients\Main.cshtml" />
+    <Content Include="Views\Home\AdminLogin.cshtml" />
+    <Content Include="Views\Home\AdminMain.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

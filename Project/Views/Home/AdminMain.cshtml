@@ -1,10 +1,12 @@
 ﻿
 @{
-    ViewBag.Title = "Main";
+    ViewBag.Title = "AdminMain";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <body style="background-image:url(https://mydoctor.lk/wp-content/uploads/2019/05/slider-bg1-2.jpg)">
     <img src="https://elderjusticeny.org/wp-content/uploads/2020/04/medicare-supplemental-insurance.png" height="60" width="180" />
-    <h2>Main</h2>
-    Welcome @Session["name"]
+    <h2>AdminMain</h2><br />
+
+    @Html.ActionLink("Patient Details", "Display", "patients")<br /><br />
+    @Html.ActionLink("Doctor Details", "Display", "doctors")<br /><br />
 </body>

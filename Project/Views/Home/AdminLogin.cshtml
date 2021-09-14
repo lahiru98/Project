@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<img src="https://elderjusticeny.org/wp-content/uploads/2020/04/medicare-supplemental-insurance.png" height="60" width="180" />
+<h2 style="color:darkviolet">Admin Login</h2>
+<div>
+
+
+    @using (Html.BeginForm("AdminMain", "Home", FormMethod.Post))
+    {
+        <table class="table-bordered">
+            <tr>
+                <td> <b>Name: </b><br /></td>
+                <td> @Html.TextBox("name")<br /></td>
+            </tr>
+            <tr>
+                <td><b>Password: </b></td>
+                <td>@Html.Password("password")</td>
+            </tr>
+        </table>
+        <br />
+        <input type="submit" value="Login" style="background-color:powderblue" />
+    }
+
+</div>

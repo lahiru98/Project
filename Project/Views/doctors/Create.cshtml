@@ -14,7 +14,7 @@
 <body style="background-image:url(https://mydoctor.lk/wp-content/uploads/2019/05/slider-bg1-2.jpg)">
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
-
+    <img src="https://elderjusticeny.org/wp-content/uploads/2020/04/medicare-supplemental-insurance.png" height="60" width="180" />
     <center>
         @using (Html.BeginForm())
         {
@@ -36,7 +36,7 @@
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.dname, htmlAttributes: new { @class = "control-label col-md-2" })
-                     (<i style="font-size:smaller">Will be your username</i>)
+                    (<i style="font-size:smaller">Will be your username</i>)
                     <div class="col-md-10">
                         @Html.EditorFor(model => model.dname, new { htmlAttributes = new { @class = "form-control" } })<br>
                         @Html.ValidationMessageFor(model => model.dname, "", new { @class = "text-danger" })

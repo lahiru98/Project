@@ -10,12 +10,27 @@
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
 </head>
-<body>
-    <!--tempory-->
+<body style="background-image:url(https://img.wallpapersafari.com/desktop/1920/1080/94/51/U0rczZ.jpg">
+   
+    <img src="https://elderjusticeny.org/wp-content/uploads/2020/04/medicare-supplemental-insurance.png" height="60" width="180"/>
+    <center>
+        <h1 style="color:red"><b>Welcome to Medi-Care</b></h1>
+        <h3 style="color:orangered"3>Choose Your Option</h3>
+        <table class="table">
+            <tr>
+                <td><button style="height:80px;width:140px;background-color:dodgerblue;">@Html.ActionLink("Patient Signin", "Create", "patients")</button></td>
+                <td><button  style="height:80px;width:140px;background-color:dodgerblue;">@Html.ActionLink("Doctor Signin", "Create", "doctors")</button></td>
+            </tr>
+            <tr>
+                <td><button  style="height:80px;width:140px;background-color:cornflowerblue;" >@Html.ActionLink("Patient Login", "Login", "patients")</button></td>
+                <td><button  style="height:80px;width:140px;background-color:cornflowerblue;" >@Html.ActionLink("Doctor Login", "Login", "doctors")</button></td>
+            </tr>
+            <tr><button  style="height:80px;width:140px;background-color:lightskyblue;">@Html.ActionLink("Admin Login", "AdminLogin", "Home")</button> </tr>
+        </table>
+    </center>
 
-    @Html.ActionLink("Patient Signin", "Create", "patients")<br /><br />
-    @Html.ActionLink("Doctor Signin", "Create", "doctors")<br /><br />
-    @Html.ActionLink("Patient Details", "Display", "patients")<br /><br />
-    @Html.ActionLink("Doctor Details", "Display", "doctors")<br /><br />
+
+
+ 
 </body>
 </html>

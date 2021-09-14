@@ -11,25 +11,29 @@
     <title>Login</title>
 </head>
 <body style="background-image:url(https://mydoctor.lk/wp-content/uploads/2019/05/slider-bg1-2.jpg)">
-  <h2 style="color:red">Doctor Login</h2>
-    <div>
-       
+    <img src="https://elderjusticeny.org/wp-content/uploads/2020/04/medicare-supplemental-insurance.png" height="60" width="180" />
 
-            @using (Html.BeginForm("Main", "doctors", FormMethod.Post))
-            {
-                <table class="table-bordered">
-                    <tr>
-                        <td> <b>Name: </b><br /></td><td> @Html.TextBox("name")<br /></td>
-                    </tr>
-                    <tr>
-                        <td><b>Password: </b></td><td>@Html.Password("ddpassword")</td>
-                    </tr>
-                </table>
-                <br />
-                    <input type="submit" value="Login" style="background-color:powderblue"/>
-            }
-            
+    <h2 style="color:darkviolet">Doctor Login</h2>
+    <div>
+
+
+        @using (Html.BeginForm("Main", "doctors", FormMethod.Post))
+        {
+            <table class="table-bordered">
+                <tr>
+                    <td> <b>Name: </b><br /></td>
+                    <td> @Html.TextBox("name")<br /></td>
+                </tr>
+                <tr>
+                    <td><b>Password: </b></td>
+                    <td>@Html.Password("ddpassword")</td>
+                </tr>
+            </table>
+            <br />
+            <input type="submit" value="Login" style="background-color:powderblue" />
+        }
+
     </div>
-    
+
 </body>
 </html>
