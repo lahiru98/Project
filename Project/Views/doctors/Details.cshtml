@@ -1,0 +1,90 @@
+﻿@model Project.Models.doctor
+
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Doctor Details</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.dname)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.dname)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.dage)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.dage)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.dgender)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.dgender)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.daddress)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.daddress)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.dcategory)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.dcategory)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.password)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.password)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.confirmpassword)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.confirmpassword)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.status)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.status)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.did }) |
+     
+    </p>
+</body>
+</html>

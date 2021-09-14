@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="medicareModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="doctor">
+          <Key>
+            <PropertyRef Name="did" />
+          </Key>
+          <Property Name="did" Type="int" Nullable="false" />
+          <Property Name="dname" Type="char" MaxLength="20" />
+          <Property Name="dage" Type="int" />
+          <Property Name="dgender" Type="char" MaxLength="10" />
+          <Property Name="daddress" Type="varchar" MaxLength="20" />
+          <Property Name="dcategory" Type="char" MaxLength="25" />
+          <Property Name="password" Type="varchar" MaxLength="20" />
+          <Property Name="confirmpassword" Type="varchar" MaxLength="20" />
+          <Property Name="status" Type="char" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="patient">
+          <Key>
+            <PropertyRef Name="pid" />
+          </Key>
+          <Property Name="pid" Type="int" Nullable="false" />
+          <Property Name="pname" Type="char" MaxLength="20" />
+          <Property Name="age" Type="int" />
+          <Property Name="address" Type="varchar" MaxLength="20" />
+          <Property Name="pgender" Type="char" MaxLength="10" />
+          <Property Name="pblood" Type="varchar" MaxLength="5" />
+          <Property Name="pemail" Type="varchar" MaxLength="20" />
+          <Property Name="password" Type="varchar" MaxLength="20" />
+          <Property Name="confirmpassword" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityContainer Name="medicareModelStoreContainer">
+          <EntitySet Name="doctor" EntityType="Self.doctor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="patient" EntityType="Self.patient" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="medicareModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="doctor">
+          <Key>
+            <PropertyRef Name="did" />
+          </Key>
+          <Property Name="did" Type="Int32" Nullable="false" />
+          <Property Name="dname" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="dage" Type="Int32" />
+          <Property Name="dgender" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="daddress" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="dcategory" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="confirmpassword" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="patient">
+          <Key>
+            <PropertyRef Name="pid" />
+          </Key>
+          <Property Name="pid" Type="Int32" Nullable="false" />
+          <Property Name="pname" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="age" Type="Int32" />
+          <Property Name="address" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="pgender" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="pblood" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="pemail" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="confirmpassword" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="medicareEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="doctors" EntityType="Self.doctor" />
+          <EntitySet Name="patients" EntityType="Self.patient" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="medicareModelStoreContainer" CdmEntityContainer="medicareEntities">
+          <EntitySetMapping Name="doctors">
+            <EntityTypeMapping TypeName="medicareModel.doctor">
+              <MappingFragment StoreEntitySet="doctor">
+                <ScalarProperty Name="did" ColumnName="did" />
+                <ScalarProperty Name="dname" ColumnName="dname" />
+                <ScalarProperty Name="dage" ColumnName="dage" />
+                <ScalarProperty Name="dgender" ColumnName="dgender" />
+                <ScalarProperty Name="daddress" ColumnName="daddress" />
+                <ScalarProperty Name="dcategory" ColumnName="dcategory" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="confirmpassword" ColumnName="confirmpassword" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="patients">
+            <EntityTypeMapping TypeName="medicareModel.patient">
+              <MappingFragment StoreEntitySet="patient">
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="pname" ColumnName="pname" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="pgender" ColumnName="pgender" />
+                <ScalarProperty Name="pblood" ColumnName="pblood" />
+                <ScalarProperty Name="pemail" ColumnName="pemail" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="confirmpassword" ColumnName="confirmpassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

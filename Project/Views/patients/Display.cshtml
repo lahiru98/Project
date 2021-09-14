@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Project.Models.patient>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.pname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pgender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pblood)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pemail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.confirmpassword)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.pname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pgender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pblood)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pemail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.confirmpassword)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.pid }) |
+                @Html.ActionLink("Details", "Details", new { id=item.pid }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.pid })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

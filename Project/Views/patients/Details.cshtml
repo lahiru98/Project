@@ -1,0 +1,90 @@
+﻿@model Project.Models.patient
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>patient</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.pname)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.pname)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.age)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.age)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.address)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.address)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.pgender)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.pgender)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.pblood)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.pblood)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.pemail)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.pemail)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.password)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.password)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.confirmpassword)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.confirmpassword)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.pid }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
