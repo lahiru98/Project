@@ -11,18 +11,46 @@ namespace Project.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class patient
-    {   
-        
+    {
+        [Required(ErrorMessage = "Enter Patient ID")]
+        [Display(Name = "Patient National ID")]
         public int pid { get; set; }
+
+        [Required(ErrorMessage = "Enter Patinet Name")]
+        [Display(Name = "Patient Name")]
         public string pname { get; set; }
+
+        [Required(ErrorMessage = "Enter Patient Age")]
+        [Display(Name = "Patient Age")]
         public Nullable<int> age { get; set; }
+
+        [Required(ErrorMessage = "Enter Patient Address")]
+        [Display(Name = "Patient Address")]
         public string address { get; set; }
+
+        [Required(ErrorMessage = "Enter Patinet Gender")]
+        [Display(Name = "Patinet Gender")]
         public string pgender { get; set; }
+
+        [Required(ErrorMessage = "Enter Blood Type")]
+        [Display(Name = "Patient Blood Type")]
         public string pblood { get; set; }
+
+        [Required(ErrorMessage = "Enter Patient Email")]
+        [EmailAddress(ErrorMessage = "Invalid Email Address")]
+        [Display(Name = "Patient Email Address")]
         public string pemail { get; set; }
+
+        [Required(ErrorMessage = "Enter Password")]
+        [Display(Name = "Patinet Password")]
         public string password { get; set; }
+
+        [Required(ErrorMessage = "Enter Confirm Password")]
+        [System.ComponentModel.DataAnnotations.Compare("password", ErrorMessage = "Passwords not matched")]
+        [Display(Name = "Patient Confirm Password")]
         public string confirmpassword { get; set; }
     }
 }

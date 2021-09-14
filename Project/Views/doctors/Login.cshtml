@@ -10,19 +10,26 @@
     <meta name="viewport" content="width=device-width" />
     <title>Login</title>
 </head>
-<body>
-    <center><h2>Doctor Login</h2></center>
+<body style="background-image:url(https://mydoctor.lk/wp-content/uploads/2019/05/slider-bg1-2.jpg)">
+  <h2 style="color:red">Doctor Login</h2>
     <div>
-        <center>
-            @using (Html.BeginForm("Main", "doctors", FormMethod.Post))
-            {   
-                
-                <b>Name: </b>    @Html.TextBox("name"); <br /><br />
-                <b>Password: </b>@Html.Password("ddpassword"); <br /><br />
+       
 
-                <input type="submit" value="Login" />
+            @using (Html.BeginForm("Main", "doctors", FormMethod.Post))
+            {
+                <table class="table-bordered">
+                    <tr>
+                        <td> <b>Name: </b><br /></td><td> @Html.TextBox("name")<br /></td>
+                    </tr>
+                    <tr>
+                        <td><b>Password: </b></td><td>@Html.Password("ddpassword")</td>
+                    </tr>
+                </table>
+                <br />
+                    <input type="submit" value="Login" style="background-color:powderblue"/>
             }
-        </center>
+            
     </div>
+    
 </body>
 </html>

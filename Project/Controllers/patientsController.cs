@@ -52,7 +52,7 @@ namespace Project.Controllers
             {
                 db.patients.Add(patient);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Login");
             }
 
             return View(patient);
@@ -84,7 +84,7 @@ namespace Project.Controllers
             {
                 db.Entry(patient).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Display");
             }
             return View(patient);
         }
@@ -112,7 +112,7 @@ namespace Project.Controllers
             patient patient = db.patients.Find(id);
             db.patients.Remove(patient);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Display");
         }
 
         protected override void Dispose(bool disposing)
@@ -127,6 +127,49 @@ namespace Project.Controllers
         public ActionResult Login()
         {
             return View();
+        }
+        public ActionResult Main()
+        {
+            try
+            {
+                string name = Request.Form["name"].Trim();
+                string password = Request.Form["ppassword"].Trim();
+                string dname = "";
+                string dpassword = "";
+                
+
+                medicareEntities db = new medicareEntities();
+                patient p = (from obj in db.patients where obj.pname == name select obj).SingleOrDefault();
+
+                dname = p.pname;
+                dpassword = p.password;
+               
+             
+                if (name == dname.Trim() && password == dpassword.Trim())
+                {
+                    Session["name"] = name;
+                    return View("Main");
+                }
+              
+                else if (password != p.password.Trim())
+                {
+                    return Content("Invalid Password");
+                }
+                else
+                {
+                    return Content("Invalid Credentials");
+                }
+
+
+            }
+
+            catch (Exception e)
+            {
+                return Content(e.Message + " or User not found");
+            }
+
+            //  return View();
+
         }
     }
 }
