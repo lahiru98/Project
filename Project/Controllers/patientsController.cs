@@ -123,5 +123,10 @@ namespace Project.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
     }
 }
