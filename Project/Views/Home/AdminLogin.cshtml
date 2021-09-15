@@ -2,27 +2,73 @@
 @{
     Layout = null;
 }
+<head>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: aqua;
+        }
+
+        li {
+            float: left;
+        }
+
+            li a {
+                display: block;
+                color: purple;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li a:hover {
+                    background-color: gainsboro;
+                }
+
+        .li-right {
+            padding-left: 600px;
+        }
+
+        div.ex1 {
+            width: 700px;
+            margin: auto;
+            border: 3px solid #ff0000;
+            border-color: mediumvioletred;
+        }
+    </style>
+</head>
+<body style="background-image:url(https://mydoctor.lk/wp-content/uploads/2019/05/slider-bg1-2.jpg)">
+    <ul>
+        <li><img src="https://elderjusticeny.org/wp-content/uploads/2020/04/medicare-supplemental-insurance.png" height="45" width="110" /></li>
+        <li>@Html.ActionLink("Patient Signin", "Create", "patients")</li>
+        <li>@Html.ActionLink("Doctor Signin", "Create", "doctors")</li>
+        <li>@Html.ActionLink("Patient Login", "Login", "patients")</li>
+        <li>@Html.ActionLink("Doctor Login", "Login", "doctors")</li>
+        <li class="li-right">@Html.ActionLink("Admin Login", "AdminLogin", "Home")</li>
+
+    </ul>
+    <h2 style="color:darkviolet">Admin Login</h2>
+    <div>
 
 
-<img src="https://elderjusticeny.org/wp-content/uploads/2020/04/medicare-supplemental-insurance.png" height="60" width="180" />
-<h2 style="color:darkviolet">Admin Login</h2>
-<div>
+        @using (Html.BeginForm("AdminMain", "Home", FormMethod.Post))
+        {
+            <table class="table-bordered">
+                <tr>
+                    <td> <b>Name: </b><br /></td>
+                    <td> @Html.TextBox("name")<br /></td>
+                </tr>
+                <tr>
+                    <td><b>Password: </b></td>
+                    <td>@Html.Password("password")</td>
+                </tr>
+            </table>
+            <br />
+            <input type="submit" value="Login" style="background-color:powderblue" />
+        }
 
-
-    @using (Html.BeginForm("AdminMain", "Home", FormMethod.Post))
-    {
-        <table class="table-bordered">
-            <tr>
-                <td> <b>Name: </b><br /></td>
-                <td> @Html.TextBox("name")<br /></td>
-            </tr>
-            <tr>
-                <td><b>Password: </b></td>
-                <td>@Html.Password("password")</td>
-            </tr>
-        </table>
-        <br />
-        <input type="submit" value="Login" style="background-color:powderblue" />
-    }
-
-</div>
+    </div>
+    </body>
