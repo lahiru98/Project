@@ -128,21 +128,21 @@ namespace Project.Controllers
         {
             return View();
         }
-
+        
         public ActionResult Main()
         {
             try
             {
-                string name = Request.Form["name"].Trim();
+                string name = Request.Form["email"].Trim();
                 string password = Request.Form["ddpassword"].Trim();
                 string dname = "";
                 string dpassword = "";
                 string dstatus = "";
 
                 medicareEntities db = new medicareEntities();
-                doctor d = (from obj in db.doctors where obj.dname == name select obj).SingleOrDefault();
+                doctor d = (from obj in db.doctors where obj.daddress == name select obj).SingleOrDefault();
 
-                dname = d.dname;
+                dname = d.daddress;
                 dpassword = d.password;
                 dstatus = d.status;
                 //SqlConnection con = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=medicare;Integrated Security=True;");

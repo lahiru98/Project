@@ -128,6 +128,7 @@ namespace Project.Controllers
         {
             return View();
         }
+        
         public ActionResult Main()
         {
             try
@@ -139,9 +140,9 @@ namespace Project.Controllers
                 
 
                 medicareEntities db = new medicareEntities();
-                patient p = (from obj in db.patients where obj.pname == name select obj).SingleOrDefault();
+                patient p = (from obj in db.patients where obj.pemail == name select obj).SingleOrDefault();
 
-                dname = p.pname;
+                dname = p.pemail;
                 dpassword = p.password;
                
              

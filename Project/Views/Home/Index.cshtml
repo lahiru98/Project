@@ -7,30 +7,75 @@
 
 <html>
 <head>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: aqua;
+        }
+
+        li {
+            float: left;
+        }
+
+            li a {
+                display: block;
+                color: purple;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li a:hover {
+                    background-color: gainsboro;
+                }
+
+        .li-right {
+            padding-left: 600px;
+        }
+        div.ex1 {
+            width: 700px;
+            margin: auto;
+            border: 3px solid #ff0000;
+            border-color:mediumvioletred;
+        }
+    </style>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
 </head>
 <body style="background-image:url(https://img.wallpapersafari.com/desktop/1920/1080/94/51/U0rczZ.jpg">
-   
-    <img src="https://elderjusticeny.org/wp-content/uploads/2020/04/medicare-supplemental-insurance.png" height="60" width="180"/>
+    <ul>
+        <li><img src="https://elderjusticeny.org/wp-content/uploads/2020/04/medicare-supplemental-insurance.png" height="45" width="110" /></li>
+        <li>@Html.ActionLink("Patient Signin", "Create", "patients")</li>
+        <li>@Html.ActionLink("Doctor Signin", "Create", "doctors")</li>
+        <li>@Html.ActionLink("Patient Login", "Login", "patients")</li>
+        <li>@Html.ActionLink("Doctor Login", "Login", "doctors")</li>
+        <li class="li-right">@Html.ActionLink("Admin Login", "AdminLogin", "Home")</li>
+        
+    </ul>
+  
     <center>
-        <h1 style="color:red"><b>Welcome to Medi-Care</b></h1>
-        <h3 style="color:orangered"3>Choose Your Option</h3>
-        <table class="table">
-            <tr>
-                <td><button style="height:80px;width:140px;background-color:dodgerblue;">@Html.ActionLink("Patient Signin", "Create", "patients")</button></td>
-                <td><button  style="height:80px;width:140px;background-color:dodgerblue;">@Html.ActionLink("Doctor Signin", "Create", "doctors")</button></td>
-            </tr>
-            <tr>
-                <td><button  style="height:80px;width:140px;background-color:cornflowerblue;" >@Html.ActionLink("Patient Login", "Login", "patients")</button></td>
-                <td><button  style="height:80px;width:140px;background-color:cornflowerblue;" >@Html.ActionLink("Doctor Login", "Login", "doctors")</button></td>
-            </tr>
-            <tr><button  style="height:80px;width:140px;background-color:lightskyblue;">@Html.ActionLink("Admin Login", "AdminLogin", "Home")</button> </tr>
-        </table>
+        <h1 style="color:purple"><b>Welcome to Medi-Care</b></h1>
+        <hr style="color:red ;background-color:red;">
+        <br />
+        <br />
+        <div align="center" class="ex1">
+            <img src="https://crandalllawgroup.com/wp-content/uploads/2019/03/Health-heart.png" width="180" height="180" />
+            <p>
+                <b style="color:darkblue">
+                    Medicare is a health-care website of Med-Tec Hospital, Colombo 10. <br /> 
+                    Patients can use this website channel doctors and read articles while doctors can check their appointments and publish articles to patients<br />
+                    More features soon......
+                </b>
+            </p>
+        </div>
+      
     </center>
 
 
 
- 
+
 </body>
 </html>
