@@ -13,8 +13,14 @@
     <title>Index</title>
 </head>
 <body style="background-image:url(https://mydoctor.lk/wp-content/uploads/2019/05/slider-bg1-2.jpg)">
-    <img src="https://elderjusticeny.org/wp-content/uploads/2020/04/medicare-supplemental-insurance.png" height="60" width="180" />
-    <center><h2><b>Patient Records</b></h2></center>
+    @using (Html.BeginForm("DisplayPatientName", "patients", FormMethod.Post))
+    {
+        <b>Search by Name: </b> @Html.TextBox("name");
+        <br />
+        <br />
+        <input type="submit" value="Search" />
+    }
+    <center><h2><b>Patient Records</b></h2></center><br />
     <table class="table">
         <tr>
             <th>
@@ -80,6 +86,6 @@
         }
 
     </table>
-   
+
 </body>
 </html>

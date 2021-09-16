@@ -10,12 +10,13 @@ using Project.Models;
 using System.Data.SqlClient;
 namespace Project.Controllers
 {
+    [NoDirectAccess]
     public class doctorsController : Controller
     {
         private medicareEntities db = new medicareEntities();
 
         // GET: doctors
-        [NoDirectAccess]
+       
         public ActionResult Display()
         {
             return View(db.doctors.ToList());
@@ -183,6 +184,27 @@ namespace Project.Controllers
             }
 
           //  return View();
+
+        }
+
+      
+        public ActionResult DisplayDoctorName()
+        {
+            string name = Request.Form["name"];
+            medicareEntities db = new medicareEntities();
+
+            var obj = from x in db.doctors where x.dname == name select x;
+            int count = obj.Count();
+
+            if (count > 0)
+            {
+                ViewBag.doctors = obj;
+                return View();
+            }
+            else
+            {
+                return Content("Doctor not founds");
+            }
 
         }
     }

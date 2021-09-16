@@ -1,0 +1,30 @@
+﻿@model Project.Models.medicareEntities
+@using Project.Models
+@{
+    ViewBag.Title = "DisplayPatientName";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body style="background-image:url(https://mydoctor.lk/wp-content/uploads/2019/05/slider-bg1-2.jpg)">
+    <h2>Searched Results</h2>
+    <table class="table">
+        <tr>
+            <th>Patient Name</th>
+            <th>Patient Age</th>
+            <th>Patient Gender</th>
+            <th>Patient Blood</th>
+            <th>Patient Email</th>
+
+        </tr>
+        @foreach (patient item in (IQueryable<patient>)ViewBag.patients)
+        {
+            <tr>
+                <td>@item.pname</td>
+                <td>@item.age</td>
+                <td>@item.pgender</td>
+                <td>@item.pblood</td>
+                <td>@item.pemail</td>
+            </tr>
+        }
+    </table>
+
+</body>

@@ -261,6 +261,8 @@
     <Content Include="Views\patients\Main.cshtml" />
     <Content Include="Views\Home\AdminLogin.cshtml" />
     <Content Include="Views\Home\AdminMain.cshtml" />
+    <Content Include="Views\patients\DisplayPatientName.cshtml" />
+    <Content Include="Views\doctors\DisplayDoctorName.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
