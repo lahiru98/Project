@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Project.Models.article>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body style="background-image:url(https://mydoctor.lk/wp-content/uploads/2019/05/slider-bg1-2.jpg)">
+
+    <h2>
+        @Html.ActionLink("Create New", "Create")
+    </h2>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.article_topic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.article_description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.article_publishby)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.article_topic)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.article_description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.article_publishby)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.article_id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.article_id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.article_id })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </body>

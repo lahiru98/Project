@@ -128,11 +128,30 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\articlesController.cs" />
     <Compile Include="Controllers\doctorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\patientsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Article.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Article.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\article.cs">
+      <DependentUpon>Article.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Article.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Article.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Article1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Article.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\doctor.cs">
       <DependentUpon>MediCareUser.tt</DependentUpon>
@@ -200,6 +219,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\Article.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Article.edmx</DependentUpon>
+      <LastGenOutput>Article.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Article.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Article.edmx</DependentUpon>
+      <LastGenOutput>Article1.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\MediCareUser.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>MediCareUser.Context.cs</LastGenOutput>
@@ -222,6 +251,13 @@
     <Content Include="Content\fonts\maicons.eot" />
     <Content Include="Content\fonts\maicons.ttf" />
     <Content Include="Content\fonts\maicons.woff" />
+    <EntityDeploy Include="Models\Article.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Article.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Article.edmx.diagram">
+      <DependentUpon>Article.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -263,6 +299,12 @@
     <Content Include="Views\Home\AdminMain.cshtml" />
     <Content Include="Views\patients\DisplayPatientName.cshtml" />
     <Content Include="Views\doctors\DisplayDoctorName.cshtml" />
+    <Content Include="Views\articles\Create.cshtml" />
+    <Content Include="Views\articles\Delete.cshtml" />
+    <Content Include="Views\articles\Details.cshtml" />
+    <Content Include="Views\articles\Edit.cshtml" />
+    <Content Include="Views\articles\Index.cshtml" />
+    <Content Include="Views\articles\IndexPatientView.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
