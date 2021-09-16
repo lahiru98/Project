@@ -305,6 +305,7 @@
     <Content Include="Views\articles\Edit.cshtml" />
     <Content Include="Views\articles\Index.cshtml" />
     <Content Include="Views\articles\IndexPatientView.cshtml" />
+    <Content Include="Views\doctors\DisplayDoctorCategory.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

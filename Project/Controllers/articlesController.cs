@@ -18,6 +18,8 @@ namespace Project.Controllers
         // GET: articles
         public ActionResult Index()
         {
+            string id = Request.Form["email"];
+            ViewBag.id = id;
             return View(db.articles.ToList());
         }
 

@@ -161,6 +161,7 @@ namespace Project.Controllers
                 if (name == dname.Trim() && password == dpassword.Trim() && dstatus.Trim() == "true")
                 {
                     Session["name"] = name;
+                    Session["pwd"] = password;
                     return View("Main");
                 }
                  else if (name == dname.Trim() && password == dpassword.Trim() && dstatus.Trim() != "true")
@@ -206,6 +207,33 @@ namespace Project.Controllers
                 return Content("Doctor not founds");
             }
 
+        }
+
+      
+
+
+
+        public ActionResult DisplayDoctorCategory()
+        {
+            string category = Request.Form["category"];
+            medicareEntities db = new medicareEntities();
+
+
+
+            var obj = from x in db.doctors where x.dcategory == category select x;
+            int count = obj.Count();
+
+
+
+            if (count > 0)
+            {
+                ViewBag.Doctors = obj;
+                return View();
+            }
+            else
+            {
+                return Content("This Category is not found");
+            }
         }
     }
 }

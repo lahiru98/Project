@@ -47,7 +47,12 @@
         </div>
     }
 
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
+        <div>
+            @using (Html.BeginForm("Main", "doctors", FormMethod.Post))
+            {
+                <input type="hidden" name="email" value="@Session["name"]" />
+                <input type="hidden" name="ddpassword" value="@Session["pwd"]" />
+                <input type="submit" value="Back To Main"/>
+            }
+        </div>
     </body>

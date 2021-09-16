@@ -6,7 +6,7 @@
 }
 
 <body style="background-image:url(https://mydoctor.lk/wp-content/uploads/2019/05/slider-bg1-2.jpg)">
-
+    @ViewBag.id
     <h2>
         @Html.ActionLink("Create New", "Create")
     </h2>
@@ -26,6 +26,7 @@
 
         @foreach (var item in Model)
         {
+
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.article_topic)
@@ -42,7 +43,17 @@
                     @Html.ActionLink("Delete", "Delete", new { id = item.article_id })
                 </td>
             </tr>
+
+
         }
 
     </table>
-    </body>
+    <div>
+        @using (Html.BeginForm("Main", "doctors", FormMethod.Post))
+        {
+            <input type="hidden" name="email" value="@Session["name"]" />
+            <input type="hidden" name="ddpassword" value="@Session["pwd"]" />
+            <input type="submit" value="Back To Main" />
+        }
+    </div>
+</body>

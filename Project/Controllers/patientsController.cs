@@ -151,6 +151,7 @@ namespace Project.Controllers
                 if (name == dname.Trim() && password == dpassword.Trim())
                 {
                     Session["name"] = name;
+                    Session["pwd"] = password;
                     return View("Main");
                 }
               

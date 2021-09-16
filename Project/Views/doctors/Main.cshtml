@@ -27,8 +27,7 @@
     <link rel="stylesheet" href="~/Content/css/theme.css">
 </head>
 <body>
-
-
+ 
     <button style="color:whitesmoke;background-color:darkslategrey;height:40px;width:80px;font-size:medium;font-weight:bold">@Html.ActionLink("Logout", "Index", "Home")</button>
 
 
@@ -60,6 +59,7 @@
                             </button>
 
 
+
                         </div>
                     </div>
                     <div class="col-md-4 py-3 py-md-0">
@@ -67,6 +67,11 @@
 
                             <button>
                                 View Appointment
+                            @*using (Html.BeginForm("Index", "articles", FormMethod.Post))
+                            {
+                                <input type="hidden" name="email" value="@Session["name"]" />
+                                <input type="submit" value="Add Article" />
+                            }  *@                     
                             </button>
 
                         </div>
@@ -110,5 +115,7 @@
     <script src="~/Content/vendor/wow/wow.min.js"></script>
 
     <script src="~/Content/js/theme.js"></script>
+
+    
 </body>
 
