@@ -15,6 +15,7 @@ namespace Project.Controllers
         private medicareEntities db = new medicareEntities();
 
         // GET: doctors
+        [NoDirectAccess]
         public ActionResult Display()
         {
             return View(db.doctors.ToList());

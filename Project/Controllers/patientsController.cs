@@ -7,7 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Project.Models;
-
+using System.Web.Routing;
 namespace Project.Controllers
 {
     public class patientsController : Controller
@@ -15,6 +15,7 @@ namespace Project.Controllers
         private medicareEntities db = new medicareEntities();
 
         // GET: patients
+        [NoDirectAccess]
         public ActionResult Display()
         {
             return View(db.patients.ToList());
