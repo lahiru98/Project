@@ -164,7 +164,7 @@ namespace Project.Controllers
                     Session["pwd"] = password;
                     return View("Main");
                 }
-                 else if (name == dname.Trim() && password == dpassword.Trim() && dstatus.Trim() != "true")
+                 else if (name == dname.Trim() && password == dpassword.Trim() && dstatus.Trim() == "false")
                 {
                     return Content("Wait till the admin approval");
                 }else if(password!=d.password.Trim())
