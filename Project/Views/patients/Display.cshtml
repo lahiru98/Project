@@ -86,6 +86,13 @@
         }
 
     </table>
-
+    <div>
+        @using (Html.BeginForm("AdminMain", "Home", FormMethod.Post))
+        {
+            <input type="hidden" name="name" value="@Session["name"]" />
+            <input type="hidden" name="ppassword" value="@Session["pwd"]" />
+            <input type="submit" value="Back To Main" />
+        }
+    </div>
 </body>
 </html>

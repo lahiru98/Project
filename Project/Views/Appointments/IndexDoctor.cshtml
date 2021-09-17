@@ -1,50 +1,46 @@
-﻿@model IEnumerable<Project.Models.article>
+﻿@model IEnumerable<Project.Models.Appointment>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <body style="background-image:url(https://mydoctor.lk/wp-content/uploads/2019/05/slider-bg1-2.jpg)">
-    @ViewBag.id
-    <h2>
-        @Html.ActionLink("Create New", "Create")
-    </h2>
+    <h2> Appointments of @Session["name"]</h2>
+
+
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.article_topic)
+                @Html.DisplayNameFor(model => model.Time)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.article_description)
+                @Html.DisplayNameFor(model => model.Reason)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.article_publishby)
+                @Html.DisplayNameFor(model => model.Doctor_email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Patient_email)
             </th>
             <th></th>
         </tr>
 
         @foreach (var item in Model)
         {
-
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.article_topic)
+                    @Html.DisplayFor(modelItem => item.Time)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.article_description)
+                    @Html.DisplayFor(modelItem => item.Reason)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.article_publishby)
+                    @Html.DisplayFor(modelItem => item.Doctor_email)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.article_id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.article_id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.article_id })
+                    @Html.DisplayFor(modelItem => item.Patient_email)
                 </td>
             </tr>
-
-
         }
 
     </table>

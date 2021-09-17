@@ -128,12 +128,31 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AppointmentsController.cs" />
     <Compile Include="Controllers\articlesController.cs" />
     <Compile Include="Controllers\doctorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\patientsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Appointment.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Appointment.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Appointment.cs">
+      <DependentUpon>Appointment.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Appointment.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Appointment.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Appointment1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Appointment.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Article.Context.cs">
       <AutoGen>True</AutoGen>
@@ -219,6 +238,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\Appointment.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Appointment.edmx</DependentUpon>
+      <LastGenOutput>Appointment.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Appointment.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Appointment.edmx</DependentUpon>
+      <LastGenOutput>Appointment1.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\Article.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Article.edmx</DependentUpon>
@@ -257,6 +286,13 @@
     </EntityDeploy>
     <Content Include="Models\Article.edmx.diagram">
       <DependentUpon>Article.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Appointment.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Appointment.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Appointment.edmx.diagram">
+      <DependentUpon>Appointment.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -305,6 +341,14 @@
     <Content Include="Views\articles\Edit.cshtml" />
     <Content Include="Views\articles\Index.cshtml" />
     <Content Include="Views\articles\IndexPatientView.cshtml" />
+    <Content Include="Views\Appointments\Create.cshtml" />
+    <Content Include="Views\Appointments\Delete.cshtml" />
+    <Content Include="Views\Appointments\Details.cshtml" />
+    <Content Include="Views\Appointments\Edit.cshtml" />
+    <Content Include="Views\Appointments\Index.cshtml" />
+    <Content Include="Views\Appointments\IndexPatient.cshtml" />
+    <Content Include="Views\Appointments\IndexDoctor.cshtml" />
+    <Content Include="Views\doctors\DisplayDoctorCategory.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -14,7 +14,7 @@
     <title>Index</title>
 </head>
 <body style="background-image:url(https://mydoctor.lk/wp-content/uploads/2019/05/slider-bg1-2.jpg)">
-   
+
     @using (Html.BeginForm("DisplayDoctorName", "doctors", FormMethod.Post))
     {
         <b>Search by Name: </b> @Html.TextBox("name");
@@ -95,6 +95,13 @@
         }
 
     </table>
-
+    <div>
+        @using (Html.BeginForm("AdminMain", "Home", FormMethod.Post))
+        {
+            <input type="hidden" name="name" value="@Session["name"]" />
+            <input type="hidden" name="ppassword" value="@Session["pwd"]" />
+            <input type="submit" value="Back To Main" />
+        }
+    </div>
 </body>
 </html>

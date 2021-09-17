@@ -51,16 +51,30 @@
         <div class="page-section py-3 mt-md-n5 custom-index">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-md-6 py-3 py-md-0">
+                    <div class="col-md-4 py-3 py-md-0">
                         <div class="card-service wow fadeInUp" style="justify-content: center;">
 
                             <button>
-                                Add Appointment
+                                @Html.ActionLink("Add Appointment", "Create", "Appointments")
                             </button>
 
 
                         </div>
                     </div>
+
+                    <div class="col-md-4 py-3 py-md-0">
+                        <div class="card-service wow fadeInUp" style="justify-content: center;">
+
+                            @using (Html.BeginForm("IndexPatient", "Appointments", FormMethod.Post))
+                            {
+                                <input type="hidden" name="email" value="@Session["name"] " />
+                                <input type="submit" value="View Appointments" />
+                            }
+
+
+                        </div>
+                    </div>
+
                     <div class="col-md-4 py-3 py-md-0">
                         <div class="card-service wow fadeInUp" style="justify-content: center;">
 

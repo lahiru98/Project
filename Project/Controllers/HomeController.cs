@@ -13,17 +13,21 @@ namespace Project.Controllers
         {
             return View();
         }
+        [NoDirectAccess]
         public ActionResult AdminLogin()
         {
             return View();
         }
+        [NoDirectAccess]
         public ActionResult AdminMain()
         {
             string name = Request.Form["name"];
-            string password = Request.Form["password"];
+            string password = Request.Form["ppassword"];
 
             if (name == "admin" && password == "admin")
             {
+                Session["name"] = name;
+                Session["pwd"] = password;
                 return View();
             }else
             {

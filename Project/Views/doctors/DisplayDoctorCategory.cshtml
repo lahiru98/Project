@@ -1,21 +1,27 @@
 ﻿@model Project.Models.medicareEntities
 @using Project.Models
+
+
 @{
-    ViewBag.Title = "DisplayPatientName";
+    ViewBag.Title = "DisplayDoctorCategory";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<h2>DisplayDoctorCategory</h2>
+
 <body style="background-image:url(https://mydoctor.lk/wp-content/uploads/2019/05/slider-bg1-2.jpg)">
     <h2>Searched Results</h2>
+
     <table class="table">
         <tr>
             <th>Doctor Name</th>
-            <th>Doctor Age</th>
-            <th>Doctor Gender</th>
-            <th>Doctor Category</th>
-            <th>Doctor Email</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Category</th>
+            <th>Email</th>
 
         </tr>
-        @foreach (doctor item in (IQueryable<doctor>)ViewBag.doctors)
+        @foreach (doctor item in (IQueryable<doctor>)ViewBag.Doctors)
         {
             <tr>
                 <td>@item.dname</td>
@@ -26,12 +32,13 @@
             </tr>
         }
     </table>
+
     <div>
-        @using (Html.BeginForm("AdminMain", "Home", FormMethod.Post))
+        @using (Html.BeginForm("Main", "patients", FormMethod.Post))
         {
             <input type="hidden" name="name" value="@Session["name"]" />
             <input type="hidden" name="ppassword" value="@Session["pwd"]" />
             <input type="submit" value="Back To Main" />
         }
     </div>
-</body>
+   
